@@ -215,6 +215,8 @@ function [image_resize , bbox_resize] = imgScale(image,bbox,scale,boxsize)
 end
 
 function [image_crop , offset] = imgCrop(image_resize, bbox_resize, boxsize)
+% boxsize: 386,386
+% bbox_resize: width,height of person bbox
 
     image_crop = gpuArray(zeros([boxsize,boxsize,3],'single'));
     offset = zeros([1 2]);
